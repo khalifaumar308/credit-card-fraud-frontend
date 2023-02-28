@@ -17,10 +17,10 @@ async function getFraudProbabilty(data) {
   console.log(json)
   let prob = Number(json)*100
   if (prob < 0.001) {
-    prob_tag.innerText = prob_tag.innerText +' Negligible'
+    prob_tag.innerText = prob_tag.innerText +' Safe Transaction'
   }
   else {
-  prob_tag.innerText = prob_tag.innerText + String(prob) + '%'}
+  prob_tag.innerText = 'Probability that transaction is fraud: ' + String(prob) + '%'}
 }
 
 function addLabels(label){
