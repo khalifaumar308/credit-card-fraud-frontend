@@ -27,7 +27,8 @@ function addLabels(label){
   let div = document.createElement('div')
   if (label == 'transaction_error') {
     div.innerHTML = `<label for="${label}"> Transaction Error<span>*</span></label>
-          <select name="transaction-error" id="${label}">
+          <select name="transaction-error" id="${label}" required>
+          <option value="choose">--choose--</option>
           <option value="None">None</option>
           <option value="Insufficient Balance">Insufficient Balance</option>
           <option value="Bad PIN">Bad PIN</option>
@@ -38,12 +39,14 @@ function addLabels(label){
   else if (label == 'use_chip'){
     div.innerHTML = `<label for="${label}"> Transaction Type<span>*</span></label>
           <select name="transaction-error" id="${label}">
+          <option value="choose">--choose--</option>
           <option value="Swipe Transaction">Swipe Transaction</option>
           <option value="Chip Transaction">Chip Transaction</option>
           <option value="Online Transaction">Online Transaction</option></select>`}
   else if (label == 'Gender'){
     div.innerHTML = `<label for="${label}">User Gender<span>*</span></label>
           <select name="transaction-error" id="${label}">
+          <option value="choose">--choose--</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option></select>`
   }
@@ -59,13 +62,24 @@ function addLabels(label){
 }
 
 function getData() {
-  document.getElementById('prb-tag').innerText = 'Fraud Probability: '
   let data = {}
   const items = document.getElementsByClassName('item')
   labels.forEach(function(label) {
     const item = document.getElementById(label)
     data[item.id] = item.value
   })
-  getFraudProbabilty(data)
-}
+  let rt = true
+  const chk = ['choose', '']
 
+  Object.values(data).forEach(val => {
+    if (chk.includes(val)) {rt = false}})
+
+  if (rt) {
+    document.getElementById('prb-tag').innerText = 'Fraud Probability: '
+    getFraudProbabilty(data)
+  }
+  else {
+    window.alert('All Fields Most Be Field')
+    return
+  }
+}
