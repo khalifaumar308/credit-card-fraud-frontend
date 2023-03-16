@@ -5,26 +5,24 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <div class="testbox">
-      <div id="form">
-        <div class="banner">
-            <h1>Credit Card Transaction Fraud Prevention</h1>
-            <a id="training" href="model_train.html">view model training</a>
-        </div>
-        <div id="head"><h2>Transaction Details</h2></div>
-        <div class="colums">
-        </div>
-        <div id="prob">
-            <h2 id="prb-tag"> </h2>
-        </div>
-        <div class="btn-block">
-        <button type="submit" id="submit" href="/frontend/test.html">Check Transaction</button>
-        </div>
-      </div>
+    <div class="container">
+      <h1>Credit Card Fraud Prevention App</h1>
+      <p class="first-parag">
+        With the growth of e-commerce websites, people and financial companies rely on online services
+        to carry out their transactions that have led to an exponential increase in the credit card frauds.
+        Fraudulent credit card transactions lead to a loss of huge amount of money. The design of an
+        effective fraud detection system is necessary in order to reduce the losses incurred by the
+        customers and financial companies.
+      </p>
+      <p class="second-parag">
+        This App uses a Deep Learning model that is trained on previus credit card transactions to 
+        predict the probability of a transaction been fraudulent based on the details of 
+        the transaction so that fraud can be prevented.
+      </p>
+      <button onclick= "window.location.href='/form.html';">Check Transaction</button>
     </div>
-    <script src="index.js"></script>
   </body>
 </html>
