@@ -1,7 +1,12 @@
 const url = 'http://umaraminu.pythonanywhere.com/predict-fraud?'
 
+const banks = ['--choose--','GTB', 'First Bank', 'Sterling Bank', 
+            'Unoin Bank', 'Access Bank','Fidelity Bank',
+            'First City Monument Bank','United Bank for Africa','Zenith Bank']
+const bank_names = banks.map((val)=>`<option value="${val}">${val}</option>`)
+
 const trans_data_card = document.getElementsByClassName('colums')[0]
-const labels = ['Time', 'Amount', 'use_chip', 'MCC', 'transaction_error', 'age',
+const labels = ['Bank', 'Time', 'Amount', 'use_chip', 'MCC', 'transaction_error', 'age',
                   'ret_age', 'Gender', 'Zipcode', 'yearly_income', 'total_debt', 'fico_score']
 const submitbtn = document.getElementById('submit')
 submitbtn.onclick = getData
@@ -25,6 +30,8 @@ async function getFraudProbabilty(data) {
 
 function addLabels(label){
   let div = document.createElement('div')
+  let bank_d = ''
+  bank_names.forEach(val => bank_d += val)
   if (label == 'transaction_error') {
     div.innerHTML = `<label for="${label}"> Transaction Error<span>*</span></label>
           <select name="transaction-error" id="${label}" required>
@@ -43,6 +50,10 @@ function addLabels(label){
           <option value="Swipe Transaction">Swipe Transaction</option>
           <option value="Chip Transaction">Chip Transaction</option>
           <option value="Online Transaction">Online Transaction</option></select>`}
+  else if (label == 'Bank') {
+    div.innerHTML = `<label for="${label}"> Bank Name<span>*</span></label>
+          <select name="Bank" id="${label}">` + bank_d
+  }
   else if (label == 'Gender'){
     div.innerHTML = `<label for="${label}">User Gender<span>*</span></label>
           <select name="transaction-error" id="${label}">
@@ -54,7 +65,7 @@ function addLabels(label){
     const label_names = {Time:'Transaction Time',Amount:'Transaction Amount',
           age:'User Age', ret_age:'User Retairment Age', Zipcode:'User Zipcode',
           yearly_income:'User Yearly Income', total_debt:'User Total Debt', 
-          fico_score:'User FICO score', MCC:'User MCC'}
+          fico_score:'User FICO score', MCC:'User MCC', Bank:'Bank Name'}
     div.innerHTML = `<label for="${label}"> ${label_names[label]}<span>*</span></label>
           <input id="${label}" type="text" name="${label}" required/>`}
   div.setAttribute('class', 'item')
@@ -65,8 +76,10 @@ function getData() {
   let data = {}
   const items = document.getElementsByClassName('item')
   labels.forEach(function(label) {
-    const item = document.getElementById(label)
-    data[item.id] = item.value
+    if (label !=='Bank') {
+      const item = document.getElementById(label)
+      data[item.id] = item.value
+    }
   })
   let rt = true
   const chk = ['choose', '']
