@@ -20,10 +20,10 @@ body {
 }
 
 
-html, body {
+/* html, body {
     min-height: 100%;
 
-}
+} */
 
 body, div, form, input, select, textarea, label, p { 
     padding: 0;
@@ -38,7 +38,7 @@ h1{
     font-size: 40px;
     color: #fff;
     z-index: 2;
-    line-height: 83px;
+    line-height: 45px;
 }
 textarea {
     width: calc(100% - 12px);
@@ -51,6 +51,7 @@ textarea {
     align-items: center;
     height: inherit;
     padding: 20px;
+    margin-top: 10%;
 }
 
 #prob {
@@ -71,12 +72,12 @@ textarea {
     justify-content: center;
     background: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
     color: rgba(0, 40, 83, 1);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .banner {
     position: relative;
-    height: 300px;
+    height: 100%;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -90,10 +91,19 @@ textarea {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(0,0,0,0); 
+    margin-bottom: 1rem;
 }
 
 #training {
     z-index: 3;
+}
+
+#prb-tag {
+    margin-left: 20%;
+    font-family: 'Monrope', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
 }
 
 .banner a:hover {
@@ -129,6 +139,7 @@ textarea {
 .item:hover p, .item:hover i, input:hover::placeholder {
     color:  #669999;
 }
+
 .item input:hover, .item select:hover, .item textarea:hover {
     border: 1px solid transparent;
     box-shadow: 0 0 3px 0  #669999;
@@ -137,6 +148,15 @@ textarea {
 
 .item span {
     color: red;
+}
+/* #user {
+    display: none;
+} */
+.user_div {
+    transition: 2s;
+}
+.transaction-div {
+    display: none;
 }
 
 .colums {
@@ -150,7 +170,7 @@ textarea {
  }
 
 
-button {
+#submit {
     padding: 10px;
     border: none;
     border-radius: 5px; 
@@ -161,7 +181,21 @@ button {
     margin-left: 40%;
 }
 
-button:hover {
+#next, #prev {
+    width: 20%;
+    padding: 0.3rem;
+    background: #0f2240;
+    color: #81AFDD;
+    border: 1px solid #585656;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+#next:hover, #prev:hover {
+    background: #a3c2c2;
+}
+
+#submit:hover {
     background:  #a3c2c2;
 }
 
@@ -173,3 +207,25 @@ select {
     width: calc(100% - 10px);
     padding: 5px;
 }
+
+#rotate {
+    display: none;
+}
+
+.classname {
+    -webkit-animation-name: cssAnimation;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode:forwards;
+  }
+  
+@-webkit-keyframes cssAnimation {
+    from {
+      -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(100px);
+    }
+    to {
+      -webkit-transform: rotate(0deg) scale(2) skew(0deg) translate(100px);
+    }
+  }
+

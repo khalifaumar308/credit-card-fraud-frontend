@@ -3,20 +3,43 @@
 
 
 body {
-    background:-moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+   background: rgb(5, 18, 36);
+    font-family: Manrope, sans-serif;
+}
 
-    /* safari 5.1+,chrome 10+ */
-    background:-webkit-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+.navbar {
+    width: 100%;
+    font-family: Manrope, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 3px solid rgb(50, 50, 50);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
 
-    /* opera 11.10+ */
-    background:-o-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+.navbar ul {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: space-between;
+    list-style: none;
+    margin-right: 5%;
+    width: 100%;
+}
 
-    /* ie 10+ */
-    background:-ms-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
+.navbar ul a {
+    color: #81AFDD;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: larger;
+}
 
-    /* global 92%+ browsers support */
-    background:radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 100%);
-    font-family: 'Manrope', sans-serif;
+.navbar ul a:hover {
+    color: white;
 }
 
 .container {
@@ -24,10 +47,15 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70%;
-    margin-top: 20%;
+    width: 80%;
+    /* margin-top: 20%;
     margin-left: 15%;
-    margin-bottom: -15%;
+    margin-bottom: -15%; */ 
+    margin-top: 15%;
+    margin-left: 10%;
+    border: 1px solid rgb(8, 8, 88);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .container h1 {
@@ -40,8 +68,8 @@ body {
     -webkit-text-fill-color: rgba(0,0,0,0); 
     font-weight: 800;
     text-align: center;
-
-}:body {
+}
+/* }:body {
     --font-family: 'Manrope', sans-serif;
   
     --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
@@ -52,13 +80,15 @@ body {
     --color-blog: #042c54;
     --color-text: #81AFDD;
     --color-subtext: #FF8A71;
-  }
+  } */
 
 .container p {
     font-size: 20px;
     color: #81AFDD;
-    text-justify: distribute;
+    /* text-justify: distribute; */
     font-weight: 500;
+    text-align: center;
+    text-indent: 2px;
 }
 
 .container button {
@@ -71,16 +101,3 @@ body {
     font-size: large;
     color: #1f2a34;
 }
-
-:body {
-      --font-family: 'Manrope', sans-serif;
-    
-      --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
-      --gradient-bar: linear-gradient(103.22deg, #AE67FA -13.86%, #F49867 99.55%);
-      
-      --color-bg: #040C18;
-      --color-footer : #031B34;
-      --color-blog: #042c54;
-      --color-text: #81AFDD;
-      --color-subtext: #FF8A71;
-    }

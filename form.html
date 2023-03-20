@@ -3,25 +3,48 @@
   <head>
     <title>Credit Card Fraud Detection</title>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
   <body>
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a href="/">Credit card Fraud Prevention</a>
+        </li>
+        <li>
+          <a href="/form.html">Check Transaction</a>
+        </li>
+        <li>
+          <a href="/model_train.html">Model Training</a>
+        </li>
+      </ul>
+    </nav>
     <div class="testbox">
       <div id="form">
         <div class="banner">
             <h1>Credit Card Transaction Fraud Prevention</h1>
-            <a id="training" href="model_train.html">view model training</a>
         </div>
-        <div id="head"><h2>Transaction Details</h2></div>
-        <div class="colums">
+        <div class="user-div">
+          <div id="head"><h2>User Details</h2></div>
+          <div class="colums" id="user"></div>
+          <button id="next">Next...</button>
         </div>
-        <div id="prob">
-            <h2 id="prb-tag"> </h2>
-        </div>
-        <div class="btn-block">
-        <button type="submit" id="submit" href="/frontend/test.html">Check Transaction</button>
+        <div class="transaction-div">
+          <div id="head"><h2>Transaction Details</h2></div>
+          <div class="colums" id="transaction">
+          </div>
+          <button id="prev">Previos...</button>
+          <div id="prob">
+              <div id="rotate">
+                <p class="classname">Checking...</p>
+              </div>
+              <h2 id="prb-tag"> </h2>
+          </div>
+          <div class="btn-block">
+          <button type="submit" id="submit" href="/frontend/test.html">Check Transaction</button>
+          </div>
         </div>
       </div>
     </div>
